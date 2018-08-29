@@ -52,6 +52,10 @@ export default function fetch(url, opts) {
 			clearTimeout(reqTimeout);
 		}
 
+		if (request.onSocket) {
+			req.once('socket', request.onSocket.bind(req));
+		}
+
 		if (request.timeout) {
 			req.once('socket', socket => {
 				reqTimeout = setTimeout(() => {

@@ -97,6 +97,7 @@ export default class Request {
 			input.compress : true;
 		this.counter = init.counter || input.counter || 0;
 		this.agent = init.agent || input.agent;
+		this.onSocket = init.onSocket || input.onSocket;
 	}
 
 	get method() {
